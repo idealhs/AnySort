@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "AnySort",
+    "version": "0.1",
+    "description": "Sorts any tables even if they are not sortable.",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "http://*/*",
+                "https://*/*",
+                "file://*/*"
+            ]
+        }
+    ],
+    "permissions": [
+        "activeTab"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
